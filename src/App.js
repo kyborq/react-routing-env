@@ -1,13 +1,18 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Hello } from "./components/Hello";
+import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
 
-import "./styles.css";
+import './styles.css';
 
 export default function App() {
   return (
-    <div className="app">
-      <Hello name="React" />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/about" component={AboutPage} />
+      </Switch>
+    </BrowserRouter>
   );
 }
